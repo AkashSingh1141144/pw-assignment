@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dynamic List</title>
+</head>
+<body>
+
+<h2>What you'll learn</h2>
+<ol id="list"></ol>
+<button id="addItemBtn">Add Item</button>
+<p id="message"></p>
+
+<script>
+	// Pre-existing array of list items
+const items = ["HTML", "CSS", "JavaScript", "React", "Node.js"];
+
+const list = document.getElementById("list");
+const addItemBtn = document.getElementById("addItemBtn");
+const message = document.getElementById("message");
+
+let currentItemIndex = 0;
+
+addItemBtn.addEventListener("click", () => {
+    if (currentItemIndex < items.length) {
+        const newItem = document.createElement("li");
+        newItem.textContent = items[currentItemIndex];
+        list.appendChild(newItem);
+        currentItemIndex++;
+        if (currentItemIndex === items.length) {
+            message.textContent = "All items have been added.";
+        }
+    }
+});
+
+</script>
+</body>
+</html>

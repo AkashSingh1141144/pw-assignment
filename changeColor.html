@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Color on Click</title>
+<style>
+	body {
+  transition: background-color 0.5s ease;
+}
+
+</style>
+</head>
+<body>
+
+<button id="changeColorBtn">Change Color</button>
+
+<script>const colors = ["#ff5733", "#33ff57", "#3357ff", "#ff33f2", "#f2ff33"];
+
+	const changeColorBtn = document.getElementById("changeColorBtn");
+	changeColorBtn.addEventListener("click", () => {
+		const randomIndex = Math.floor(Math.random() * colors.length);
+		document.body.style.backgroundColor = colors[randomIndex];
+	});
+	</script>
+</body>
+</html>
